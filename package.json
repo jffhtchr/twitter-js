@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jffhtchr/twitter-js/issues"
   },
-  "homepage": "https://github.com/jffhtchr/twitter-js#readme"
+  "homepage": "https://github.com/jffhtchr/twitter-js#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
