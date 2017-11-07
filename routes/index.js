@@ -14,13 +14,18 @@ router.get('/', function (req, res) {
 router.get('/users/:name', function(req, res) {
   var name = req.params.name;
   var list = tweetBank.find( {name: name} );
-  res.render( 'index', { tweets: list } );
+  res.render( 'index', { title: 'Twitter.js', tweets: list, showForm: true, name: req.params.name} );
 });
 
 router.get("/tweets/:id", function (req, res){
     var id = +req.params.id;
     var list = tweetBank.find( ['id', id] );
     res.render("index", {tweets: list});
+});
+
+router.post('/tweets', function(req, res, next) {
+  tweetBank.add(req.body.name, req.body.text);
+  res.redirect('/');
 });
 
 module.exports = router;
