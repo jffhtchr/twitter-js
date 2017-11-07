@@ -30,12 +30,11 @@ var locals = {
     ]
 };
 
-var PATH_TO_TEMPLATES = 'views';
-nunjucks.configure(PATH_TO_TEMPLATES, {
-    autoescape: true,
-    express: app
-});
 
-app.get( '/people', function( req, res ) {
-    return res.render( 'index.html', locals) ;
+app.get( '/people', function( request, response ) {
+    return response.render( 'index.html', locals) ;
 } ) ;
+
+app.set('view engine', 'html'); // have res.render work with html files
+app.engine('html', nunjucks.render); // when giving html files to res.render, tell it to use nunjucks
+nunjucks.configure('views', { noCache: true }); 
