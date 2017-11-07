@@ -6,16 +6,18 @@
     <h1>Welcome to Twitter.js!</h1>
   </div>
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-3" id="profile-pic" >
+      <!-- <div class= "profile-pic"> -->
       <img src="https://pbs.twimg.com/profile_images/2450268678/olxp11gnt09no2y2wpsh_normal.jpeg"><br>
       <b>Your Name</b><br>
       100 followers
     </div>
-    <div class="col-md-9">
+    <div class="col-md-9" id = "content-stuff">
     
       <!-- display tweets here -->
+
       {% for tweet in tweets %}
-        <li>{{tweet.content}}</li>
+        <li id = "li-style"><img id = "li-img" src="https://pbs.twimg.com/profile_images/2450268678/olxp11gnt09no2y2wpsh_normal.jpeg"><br><div id ="content">{{tweet.name}} <br> {{tweet.content}}</div></li>
       {% endfor %}
       
     </div>
