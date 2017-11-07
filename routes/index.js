@@ -12,11 +12,11 @@ router.get('/', function (req, res) {
 });
 
 router.get('/users/:name', function(req, res) {
-  var name = req.params.name; //jeff hatcher
-  name = name.split(' '); //[jeff, hatcher]
-  name[0] = name[0][0].toUpperCase() + name[0].slice(1); //J eff
-  name[1] = name[1][0].toUpperCase() + name[1].slice(1); //H atcher
-  name = name.join(' '); //Jeff Hatcher
+  var name = req.params.name;
+  name = name.split(' ');
+  name[0] = name[0][0].toUpperCase() + name[0].slice(1);
+  name[1] = name[1][0].toUpperCase() + name[1].slice(1);
+  name = name.join(' ');
   var list = tweetBank.find( ['name', name] );
   res.render( 'index', { tweets: list } );
 });

@@ -5,8 +5,11 @@ const _ = require('lodash');
 
 var data = [];
 
+let id = 0;
+
 function add(name, content) {
   data.push({
+    id: id++,
     name: name,
     content: content
   });
