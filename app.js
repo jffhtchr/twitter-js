@@ -7,7 +7,7 @@ const PORT = 3000;
 const nunjucks = require('nunjucks');
 
 app.listen(PORT, () => {
-    console.log(`Listening on ${PORT}`)
+    console.log(`Listening on ${PORT}`);
 });
 
 const routes = require('./routes');
@@ -22,4 +22,4 @@ app.use(function (request, response, next) {
 
 app.set('view engine', 'html'); // have res.render work with html files
 app.engine('html', nunjucks.render); // when giving html files to res.render, tell it to use nunjucks
-nunjucks.configure('views', { noCache: true }); 
+nunjucks.configure('views', { noCache: true });

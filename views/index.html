@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-  
+
   <div class="page-header">
     <h1>Welcome to Twitter.js!</h1>
   </div>
@@ -13,14 +13,14 @@
       100 followers
     </div>
     <div class="col-md-9" id = "content-stuff">
-    
+
       <!-- display tweets here -->
 
       {% for tweet in tweets %}
         <li id = "li-style"><img id = "li-img" src="https://pbs.twimg.com/profile_images/2450268678/olxp11gnt09no2y2wpsh_normal.jpeg"><br><div id ="content">{{tweet.name}} <br> {{tweet.content}}</div></li>
       {% endfor %}
-      
+
     </div>
   </div>
-    
+
 {% endblock %}
