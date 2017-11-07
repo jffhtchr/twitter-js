@@ -21,6 +21,15 @@ router.get('/users/:name', function(req, res) {
   res.render( 'index', { tweets: list } );
 });
 
+router.get("/tweets/:id", function (req, res){
+    var id = +req.params.id;
+    console.log(id);
+    console.log(tweetBank.list());
+    var list = tweetBank.find( ['id', id] );
+    console.log(list);
+    res.render("index", {tweets: list}) 
+})
+
 module.exports = router;
 
 // var locals = {
